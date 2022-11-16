@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicResuts.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AyurvedicTakephoto extends StatefulWidget {
   AyurvedicTakephoto({Key key}) : super(key: key);
@@ -10,6 +13,7 @@ class AyurvedicTakephoto extends StatefulWidget {
 }
 
 class _AyurvedicTakephotoState extends State<AyurvedicTakephoto> {
+  File imageFile;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -68,30 +72,45 @@ class _AyurvedicTakephotoState extends State<AyurvedicTakephoto> {
                       height: 40,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 200,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                            color: green.withOpacity(0.1),
-                            border: Border.all(
-                              color: green,
-                            )),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.camera_alt,
-                              color: green,
-                            ),
-                            Text(
-                              "Take a photo",
-                              style: TextStyle(color: green),
+                      onTap: () {
+                        _getFromCamera();
+                      },
+                      child: imageFile == null
+                          ? Container(
+                              height: 200,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  color: green.withOpacity(0.1),
+                                  border: Border.all(
+                                    color: green,
+                                  )),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Icon(
+                                    Icons.camera_alt,
+                                    color: green,
+                                  ),
+                                  Text(
+                                    "Take a photo",
+                                    style: TextStyle(color: green),
+                                  )
+                                ],
+                              ),
                             )
-                          ],
-                        ),
-                      ),
+                          : Container(
+                              height: 200,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  color: green.withOpacity(0.1),
+                                  border: Border.all(
+                                    color: green,
+                                  )),
+                              child: Image.file(
+                                imageFile,
+                                fit: BoxFit.cover,
+                              )),
                     ),
                     const SizedBox(
                       height: 20,
@@ -130,5 +149,16 @@ class _AyurvedicTakephotoState extends State<AyurvedicTakephoto> {
         ],
       )),
     );
+  }
+
+  _getFromCamera() async {
+    PickedFile pickedFile = await ImagePicker().getImage(
+      source: ImageSource.camera,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      File imageFile = File(pickedFile.path);
+    }
   }
 }

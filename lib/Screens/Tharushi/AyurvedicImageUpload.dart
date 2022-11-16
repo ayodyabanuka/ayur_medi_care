@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicResuts.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AyurvedicImageUpload extends StatefulWidget {
   AyurvedicImageUpload({Key key}) : super(key: key);
@@ -10,6 +13,7 @@ class AyurvedicImageUpload extends StatefulWidget {
 }
 
 class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
+  File imageFile;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -68,30 +72,46 @@ class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
                       height: 40,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 200,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                            color: green.withOpacity(0.1),
-                            border: Border.all(
-                              color: green,
-                            )),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.cloud_upload,
-                              color: green,
-                            ),
-                            Text(
-                              "Choose from files",
-                              style: TextStyle(color: green),
+                      onTap: () {
+                        _getFromGallery();
+                      },
+                      child: imageFile == null
+                          ? Container(
+                              height: 200,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  color: green.withOpacity(0.1),
+                                  border: Border.all(
+                                    color: green,
+                                  )),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Icon(
+                                    Icons.cloud_upload,
+                                    color: green,
+                                  ),
+                                  Text(
+                                    "Choose from files",
+                                    style: TextStyle(color: green),
+                                  )
+                                ],
+                              ),
                             )
-                          ],
-                        ),
-                      ),
+                          : Container(
+                              decoration: BoxDecoration(
+                                  color: green.withOpacity(0.1),
+                                  border: Border.all(
+                                    color: green,
+                                  )),
+                              height: 200,
+                              width: size.width,
+                              child: Image.file(
+                                imageFile,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -130,5 +150,16 @@ class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
         ],
       )),
     );
+  }
+
+  _getFromGallery() async {
+    PickedFile pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      File imageFile = File(pickedFile.path);
+    }
   }
 }
