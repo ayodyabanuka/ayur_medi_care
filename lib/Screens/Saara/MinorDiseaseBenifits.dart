@@ -72,7 +72,7 @@ class _MinorDiseaseBenifitsState extends State<MinorDiseaseBenifits> {
                           itemCount: 8,
                           itemBuilder: (context, index) {
                             return Container(
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                 vertical: 8,
                               ),
                               padding: const EdgeInsets.all(10),

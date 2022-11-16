@@ -38,7 +38,7 @@ class _customizedTextFieldState extends State<customizedTextField> {
                   color: Colors.grey.withOpacity(0.3)),
             ],
             borderRadius: BorderRadius.circular(10),
-            color: Color.fromARGB(255, 255, 255, 255)),
+            color: const Color.fromARGB(255, 255, 255, 255)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
