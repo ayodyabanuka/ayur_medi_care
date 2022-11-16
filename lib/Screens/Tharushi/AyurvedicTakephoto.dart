@@ -158,7 +158,9 @@ class _AyurvedicTakephotoState extends State<AyurvedicTakephoto> {
       maxHeight: 1800,
     );
     if (pickedFile != null) {
-      File imageFile = File(pickedFile.path);
+      setState(() {
+        File imageFile = File(pickedFile.path);
+      });
     }
   }
 }

@@ -69,10 +69,10 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 94,
                       height: 94,
-                      child: Placeholder(),
+                      child: Image.asset("Assets/Images/img1.jpg"),
                     ),
                     const SizedBox(
                       height: 20,

@@ -81,11 +81,12 @@ class _AyurvedicImagesState extends State<AyurvedicImages> {
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
-                      itemCount: 7,
+                      itemCount: 4,
                       itemBuilder: (context, index) {
                         return Container(
                           margin: const EdgeInsets.all(10),
-                          child: const Placeholder(),
+                          child:
+                              Image.asset("Assets/Images/img${index + 1}.jpg"),
                         );
                       },
                     ))

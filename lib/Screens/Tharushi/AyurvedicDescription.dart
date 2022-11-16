@@ -71,16 +71,16 @@ class _AyurvedicDescriptionState extends State<AyurvedicDescription> {
                       height: 20,
                     ),
                     Row(
-                      children: const [
+                      children: [
                         SizedBox(
                           width: 94,
                           height: 94,
-                          child: Placeholder(),
+                          child: Image.asset("Assets/Images/img1.jpg"),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
+                        const Text(
                           "Rosacea",
                           style: TextStyle(color: Colors.black, fontSize: 18),
                         ),

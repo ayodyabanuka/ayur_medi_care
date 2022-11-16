@@ -72,10 +72,10 @@ class _BeautyDescriptionState extends State<BeautyDescription> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 94,
                       height: 94,
-                      child: Placeholder(),
+                      child: Image.asset("Assets/Images/images1.jpg"),
                     ),
                     const SizedBox(
                       height: 40,

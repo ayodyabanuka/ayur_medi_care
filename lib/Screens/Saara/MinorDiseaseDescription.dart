@@ -72,10 +72,10 @@ class _MinorDiseaseDescriptionState extends State<MinorDiseaseDescription> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 280,
                       height: 210,
-                      child: Placeholder(),
+                      child: Image.asset("Assets/Images/diarrhea.png"),
                     ),
                     const SizedBox(
                       height: 40,

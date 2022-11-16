@@ -159,7 +159,9 @@ class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
       maxHeight: 1800,
     );
     if (pickedFile != null) {
-      File imageFile = File(pickedFile.path);
+      setState(() {
+        File imageFile = File(pickedFile.path);
+      });
     }
   }
 }

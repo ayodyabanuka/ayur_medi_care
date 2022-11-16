@@ -78,6 +78,14 @@ class _BeautyCareHomeState extends State<BeautyCareHome> {
                                 MaterialPageRoute(
                                     builder: (context) => BeautyCareVoice()));
                           },
+                          icon: const Icon(Icons.search)),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BeautyCareVoice()));
+                          },
                           icon: const Icon(Icons.mic_none_outlined))
                     ],
                   ),
@@ -118,11 +126,15 @@ class _BeautyCareHomeState extends State<BeautyCareHome> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: 10,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Container(
-                  child: Placeholder(),
+                  padding: const EdgeInsets.all(10),
+                  child: Image.asset(
+                    "Assets/Images/images${index + 1}.jpg",
+                    fit: BoxFit.cover,
+                  ),
                 );
               },
             ),
