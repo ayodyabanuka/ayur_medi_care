@@ -2,14 +2,14 @@ import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicResuts.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 
-class AyurvedicImageUpload extends StatefulWidget {
-  AyurvedicImageUpload({Key key}) : super(key: key);
+class AyurvedicTakephoto extends StatefulWidget {
+  AyurvedicTakephoto({Key key}) : super(key: key);
 
   @override
-  State<AyurvedicImageUpload> createState() => _AyurvedicImageUploadState();
+  State<AyurvedicTakephoto> createState() => _AyurvedicTakephotoState();
 }
 
-class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
+class _AyurvedicTakephotoState extends State<AyurvedicTakephoto> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -35,7 +35,7 @@ class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     alignment: Alignment.topCenter,
-                    image: AssetImage("Assets/Images/plant2.png"),
+                    image: AssetImage("Assets/Images/plant3.png"),
                     fit: BoxFit.fitWidth)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -82,11 +82,11 @@ class _AyurvedicImageUploadState extends State<AyurvedicImageUpload> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Icon(
-                              Icons.cloud_upload,
+                              Icons.camera_alt,
                               color: green,
                             ),
                             Text(
-                              "Choose from files",
+                              "Take a photo",
                               style: TextStyle(color: green),
                             )
                           ],

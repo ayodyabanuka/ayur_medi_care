@@ -1,14 +1,14 @@
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 
-class BeautyBenifits extends StatefulWidget {
-  BeautyBenifits({Key key}) : super(key: key);
+class AyurvedicTreatments extends StatefulWidget {
+  AyurvedicTreatments({Key key}) : super(key: key);
 
   @override
-  State<BeautyBenifits> createState() => _BeautyBenifitsState();
+  State<AyurvedicTreatments> createState() => _AyurvedicTreatmentsState();
 }
 
-class _BeautyBenifitsState extends State<BeautyBenifits> {
+class _AyurvedicTreatmentsState extends State<AyurvedicTreatments> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,7 +34,7 @@ class _BeautyBenifitsState extends State<BeautyBenifits> {
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     alignment: Alignment.topCenter,
-                    image: AssetImage("Assets/Images/BeautycareBenifits.png"),
+                    image: AssetImage("Assets/Images/plantTreatments.png"),
                     fit: BoxFit.fitWidth)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -58,7 +58,7 @@ class _BeautyBenifitsState extends State<BeautyBenifits> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Benifits of the Remedy",
+                      "Ayurvedic Treatments",
                       style: TextStyle(
                           color: green,
                           fontWeight: FontWeight.bold,

@@ -1,16 +1,17 @@
-import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicImageUpload.dart';
-import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicTakephoto.dart';
+import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicDescription.dart';
+import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicImages.dart';
+import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicTreatments.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 
-class AyurvedicPlantHome extends StatefulWidget {
-  AyurvedicPlantHome({Key key}) : super(key: key);
+class AyurvedicResuts extends StatefulWidget {
+  AyurvedicResuts({Key key}) : super(key: key);
 
   @override
-  State<AyurvedicPlantHome> createState() => _AyurvedicPlantHomeState();
+  State<AyurvedicResuts> createState() => _AyurvedicResutsState();
 }
 
-class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
+class _AyurvedicResutsState extends State<AyurvedicResuts> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -31,18 +32,18 @@ class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 260,
+            height: 230,
             width: size.width,
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     alignment: Alignment.topCenter,
-                    image: AssetImage("Assets/Images/plant1.png"),
+                    image: AssetImage("Assets/Images/plant4.png"),
                     fit: BoxFit.fitWidth)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -57,27 +58,31 @@ class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
                     const Text(
-                      "Ayurvedic Plant Detaction",
+                      "Plant Name",
                       style: TextStyle(
-                          color: Colors.black,
+                          color: green,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 20,
+                    ),
+                    const SizedBox(
+                      width: 94,
+                      height: 94,
+                      child: Placeholder(),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     InkWell(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AyurvedicImageUpload()));
+                                builder: (context) => AyurvedicDescription()));
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -89,7 +94,7 @@ class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Text(
-                              "Upload an Image",
+                              "Related Images",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
@@ -110,7 +115,7 @@ class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AyurvedicTakephoto()));
+                                builder: (context) => AyurvedicImages()));
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -122,7 +127,40 @@ class _AyurvedicPlantHomeState extends State<AyurvedicPlantHome> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Text(
-                              "Take a photo",
+                              "Related Images",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Icon(
+                              Icons.arrow_right,
+                              color: Colors.white,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AyurvedicTreatments()));
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                            color: green,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Ayurvedic Treatments",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),

@@ -113,6 +113,23 @@ class _BeautyCareHomeState extends State<BeautyCareHome> {
               ],
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Container(
+                  child: Placeholder(),
+                );
+              },
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
         ],
       )),
     );
