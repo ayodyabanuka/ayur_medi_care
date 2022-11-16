@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:ayur_medi_care/Screens/Auth/Login.dart';
+import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,27 +15,9 @@ int logged;
 
 class _splashScreenState extends State<splashScreen>
     with TickerProviderStateMixin {
-  String string = '';
   void initState() {
     getdata();
-    savedata();
     super.initState();
-  }
-
-  savedata() async {
-    SharedPreferences localStorage = await SharedPreferences.getInstance();
-    if (localStorage.getBool('food') == null) {
-      localStorage.setBool('food', true);
-    }
-    if (localStorage.getBool('water') == null) {
-      localStorage.setBool('water', true);
-    }
-    if (localStorage.getBool('env') == null) {
-      localStorage.setBool('env', true);
-    }
-    if (localStorage.getBool('security') == null) {
-      localStorage.setBool('security', true);
-    }
   }
 
   getdata() async {
@@ -64,21 +47,26 @@ class _splashScreenState extends State<splashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xff024F8E),
-        elevation: 0,
-        toolbarHeight: 0,
-      ),
       body: Container(
         alignment: Alignment.center,
-        decoration: const BoxDecoration(color: Color(0xff024F8E)),
-        child: Center(
-          child: SizedBox(
-            height: 60,
-            child: Image.asset(
-              "assets/images/logo.png",
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("Assets/Images/authback.png"),
+                fit: BoxFit.cover)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                "Assets/Images/logo.png",
+              ),
             ),
-          ),
+            const Text(
+              "Welcome",
+              style: TextStyle(
+                  color: green, fontSize: 32, fontWeight: FontWeight.w700),
+            )
+          ],
         ),
       ),
     );
