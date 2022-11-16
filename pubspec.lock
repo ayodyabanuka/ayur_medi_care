@@ -170,6 +170,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+  lint:
+    dependency: transitive
+    description:
+      name: lint
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.10.0"
   lints:
     dependency: transitive
     description:
@@ -198,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+  multiple_search_selection:
+    dependency: "direct dev"
+    description:
+      name: multiple_search_selection
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.2"
   nested:
     dependency: transitive
     description:

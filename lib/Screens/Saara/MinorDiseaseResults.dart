@@ -1,17 +1,17 @@
-import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicDescription.dart';
-import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicImages.dart';
-import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicTreatments.dart';
+import 'package:ayur_medi_care/Screens/Saara/MinorDiseaseBenifits.dart';
+import 'package:ayur_medi_care/Screens/Saara/MinorDiseaseDescription.dart';
+import 'package:ayur_medi_care/Screens/Saara/MinorDiseaseRemedies.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
 import 'package:flutter/material.dart';
 
-class AyurvedicResuts extends StatefulWidget {
-  AyurvedicResuts({Key key}) : super(key: key);
+class MinorDiseaseResults extends StatefulWidget {
+  MinorDiseaseResults({Key key}) : super(key: key);
 
   @override
-  State<AyurvedicResuts> createState() => _AyurvedicResutsState();
+  State<MinorDiseaseResults> createState() => _MinorDiseaseResultsState();
 }
 
-class _AyurvedicResutsState extends State<AyurvedicResuts> {
+class _MinorDiseaseResultsState extends State<MinorDiseaseResults> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,12 +32,12 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 230,
+            height: 280,
             width: size.width,
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     alignment: Alignment.topCenter,
-                    image: AssetImage("Assets/Images/plant4.png"),
+                    image: AssetImage("Assets/Images/minor3.png"),
                     fit: BoxFit.fitWidth)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -60,19 +60,11 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                 child: Column(
                   children: [
                     const Text(
-                      "Plant Name",
+                      "Minor Disease Name",
                       style: TextStyle(
                           color: green,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const SizedBox(
-                      width: 94,
-                      height: 94,
-                      child: Placeholder(),
                     ),
                     const SizedBox(
                       height: 20,
@@ -82,7 +74,8 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AyurvedicDescription()));
+                                builder: (context) =>
+                                    MinorDiseaseDescription()));
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -115,7 +108,7 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AyurvedicImages()));
+                                builder: (context) => MinorDiseaseRemedies()));
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -127,7 +120,7 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Text(
-                              "Related Images",
+                              "Ayurvedic Remedies",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
@@ -148,7 +141,7 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AyurvedicTreatments()));
+                                builder: (context) => MinorDiseaseBenifits()));
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
@@ -160,7 +153,7 @@ class _AyurvedicResutsState extends State<AyurvedicResuts> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Text(
-                              "Ayurvedic Treatments",
+                              "Benifits Of the Remedies",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),

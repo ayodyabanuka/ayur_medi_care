@@ -1,3 +1,4 @@
+import 'package:ayur_medi_care/Screens/Saara/MinorDiseaseHome.dart';
 import 'package:ayur_medi_care/Screens/Tharushi/AyurvedicPlantHome.dart';
 import 'package:ayur_medi_care/Screens/Thirushi/BeautyCareHome.dart';
 import 'package:ayur_medi_care/Utils/Colors.dart';
@@ -85,7 +86,12 @@ class _HomeState extends State<Home> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MinorDiseaseHome()));
+                      },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
